@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMH-Connect API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 3rem;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .header {
+            margin-bottom: 2rem;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .api-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .api-info h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .link-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .link-card:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+        
+        .link-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .link-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .endpoints-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .endpoints-section h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .endpoint-list {
+            display: grid;
+            gap: 1rem;
+            text-align: left;
+        }
+        
+        .endpoint-item {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        .endpoint-item h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .endpoint-item code {
+            background: #e9ecef;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #495057;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+            color: #666;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SMH-Connect API</h1>
+            <span class="status-badge">🟢 Active</span>
+            <p>Smart HealthConnect Backend API Documentation & Testing Hub</p>
+        </div>
+        
+        <div class="api-info">
+            <h2>📚 API Documentation</h2>
+            <p>Interactive documentation and testing interfaces for all API endpoints</p>
+        </div>
+        
+        <div class="links-grid">
+            <a href="/api-docs" class="link-card">
+                <h3>📋 Swagger UI</h3>
+                <p>Interactive API documentation with live testing capabilities</p>
+            </a>
+            
+            <a href="/docs" class="link-card">
+                <h3>🎨 Custom Docs</h3>
+                <p>Enhanced custom documentation interface</p>
+            </a>
+            
+            <a href="/swagger.json" class="link-card">
+                <h3>📄 API Schema</h3>
+                <p>Raw OpenAPI 3.0 JSON specification</p>
+            </a>
+        </div>
+        
+        <div class="endpoints-section">
+            <h2>🔗 Available Endpoints</h2>
+            <div class="endpoint-list">
+                <div class="endpoint-item">
+                    <h4>User Management</h4>
+                    <p>Base URL: <code>/app</code> - Create, read, update, and delete users</p>
+                </div>
+                
+                <div class="endpoint-item">
+                    <h4>Authentication</h4>
+                    <p>Base URL: <code>/auth</code> - User login and authentication</p>
+                </div>
+                
+                <div class="endpoint-item">
+                    <h4>Protected Routes</h4>
+                    <p>URL: <code>/authmiddleware</code> - JWT protected endpoint example</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🏥 Smart HealthConnect Platform | Built with Node.js, Express & MongoDB</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Server running on <strong>http://localhost:3002</strong></p>
+        </div>
+    </div>
+</body>
+</html>

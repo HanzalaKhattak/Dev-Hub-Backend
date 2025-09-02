@@ -1,5 +1,70 @@
 import jwt from "jsonwebtoken";
 
+/**
+ * @swagger
+ * /authmiddleware:
+ *   get:
+ *     summary: Protected route example
+ *     description: Example of a protected route that requires JWT authentication. Returns user details from the token.
+ *     tags:
+ *       - Authentication
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: header
+ *         name: token
+ *         required: true
+ *         description: JWT token for authentication
+ *         schema:
+ *           type: string
+ *           example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+ *     responses:
+ *       200:
+ *         description: Access authorized, returns user information
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Access authorized
+ *                 user:
+ *                   type: object
+ *                   properties:
+ *                     userId:
+ *                       type: string
+ *                       example: 64c8e9a4f6a4d5c8b3f0e123
+ *                     email:
+ *                       type: string
+ *                       example: johndoe@example.com
+ *                     userName:
+ *                       type: string
+ *                       example: johndoe
+ *       404:
+ *         description: Invalid or missing token
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 wrn:
+ *                   type: string
+ *                   example: Invalid Token
+ *       401:
+ *         description: User not authorized
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 wrn:
+ *                   type: string
+ *                   example: User not authorized
+ *       500:
+ *         description: Internal server error
+ */
+
 export const authmiddleware =  async(req,res,next)=>{
     try {
         const varifiedToken = req.headers.token;

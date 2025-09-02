@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken";
 // import authroute from "../routes/authRoute.js";
 
-//Create New Data:
+
 export const createNewUser = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -11,17 +11,19 @@ export const createNewUser = async (req, res) => {
       return res.status(400).json({ warning: "All fields are required" });
     }
 
-    //Convert the password to cypher code.
-    const hashpassword = await bcrypt.hash(password,10)
-    // console.log("full info of the user",{ username, email, password },hashpassword)
-    const newUser = await User.create({ username, email, password:hashpassword});
+    // Convert the password to cypher code.
+    const hashpassword = await bcrypt.hash(password, 10);
+    const newUser = await User.create({ username, email, password: hashpassword });
+
     return res
       .status(200)
       .json({ Message: "User Created Successfully", user: newUser });
   } catch (error) {
     console.log(error);
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
+
 
 //Getting All data:
 export const getAllUser = async(req,res) => {
@@ -49,6 +51,7 @@ export const deleteUser = async(req,res) => {
 }
 
 //Update data:
+
 
 export const updateUser = async(req,res) => {
   try {

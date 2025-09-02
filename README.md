@@ -1,6 +1,6 @@
-# DevHub Backend API
+# SMH-Connect Backend API
 
-A robust REST API backend built with Node.js, Express, and MongoDB for the DevHub platform.
+A robust REST API backend built with Node.js, Express, and MongoDB for the Smart HealthConnect platform.
 
 ## 🚀 Features
 
@@ -10,6 +10,7 @@ A robust REST API backend built with Node.js, Express, and MongoDB for the DevHu
 - MongoDB Database Integration
 - CORS Enabled
 - Environment Variables Support
+- **Comprehensive Swagger API Documentation**
 
 ## 🛠️ Tech Stack
 
@@ -20,6 +21,23 @@ A robust REST API backend built with Node.js, Express, and MongoDB for the DevHu
 - bcrypt for Password Hashing
 - CORS for Cross-Origin Resource Sharing
 - dotenv for Environment Variables
+- Swagger UI for API Documentation
+
+## 📚 API Documentation
+
+This project includes comprehensive Swagger/OpenAPI documentation for all endpoints.
+
+### Access the Documentation:
+- **Swagger UI**: http://localhost:3002/api-docs
+- **Custom Documentation**: http://localhost:3002/docs
+- **Raw JSON**: http://localhost:3002/swagger.json
+
+### Features of the Documentation:
+- Interactive API testing interface
+- Complete endpoint documentation
+- Request/response schemas
+- Authentication examples
+- Error response descriptions
 
 ## 📝 API Endpoints
 

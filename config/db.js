@@ -9,8 +9,10 @@ const connectDB = async () => {
         await connect(process.env.MONGODB_URI);
         console.log("Database connected successfully - Status Code: 200");
     } catch (error) {
-        console.log('Database connection error:', error);
-        process.exit(1);
+        console.log('Database connection error:', error.message);
+        console.log('Server will continue running without database connection');
+        // Don't exit the process, just log the error
+        // process.exit(1);
     }
 }
 
